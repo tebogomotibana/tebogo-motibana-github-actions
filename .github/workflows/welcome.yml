@@ -1,0 +1,6 @@
+name: My workflow stuff
+on:
+  pull_request:
+    types: [opened,synchronized]
+permissions:
+  pull-requests: write
