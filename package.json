@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "<header>",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node api.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.21.2",
     "tebogo-motibana-github-actions": "file:"
   }
 }
