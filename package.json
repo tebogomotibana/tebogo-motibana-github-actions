@@ -1,0 +1,13 @@
+{
+  "name": "tebogo-motibana-github-actions",
+  "version": "1.0.0",
+  "description": "<header>",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tebogo-motibana-github-actions": "file:"
+  }
+}
