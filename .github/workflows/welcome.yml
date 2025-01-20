@@ -2,7 +2,7 @@ name: My workflow stuff
 on:
   pull_request:
     types: [opened,synchronized]
-permissions:
+permissions: 
   pull-requests: write
 jobs:
   build:
