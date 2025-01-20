@@ -1,0 +1,42 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - '.*'
+    branches:
+      - main 
+  workflow_run:
+    workflows: ["Install dependencies"]
+    types:
+      - completed
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Create Artifact
+      run: zip -r app.zip . -x "*.git*"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: app
+        path: app.zip
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: app.zip
